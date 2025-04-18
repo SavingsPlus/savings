@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <style>
+      .container {
+        background-color: rgb(23, 107, 81);
+        padding: 30px;
+        max-width: 370px;
+        border-radius: 10px;
+        color: white;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+      }
+      form {
+        background-color: rgb(252, 252, 252);
+        max-width: 100%;
+        padding: 20px;
+        color: black;
+        font-family: Arial, Helvetica, sans-serif;
+        border-radius: 10px;
+      }
+      input {
+        width: 100%;
+        height: 30px;
+        border: thin solid rgb(160, 209, 182);
+        margin-bottom: 30px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+      }
+      #checkBox {
+        width: 20px;
+        height: 20px;
+      }
+      button {
+        padding: 5px 10px;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 16px;
+        background-color: rgb(1, 73, 53);
+        border: none;
+        border-radius: 8px;
+        color: white;
+        width: 100%;
+        height: 40px;
+        margin-top: 10px;
+        cursor: pointer;
+      }
+      h2 {
+        color: #ffffff;
+      }
+      h1 {
+        text-align: center;
+        font-family: "Courier New", Courier, monospace;
+        color: #ffffff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>SavingsPlus</h1>
+      <h2>Login</h2>
+      <form id="loginForm">
+        <div>
+          <label for="userID">Email</label><br />
+          <input type="text" id="userID" required />
+        </div>
+        <div>
+          <label for="passWord">Password</label><br />
+          <input type="password" id="passWord" required />
+        </div>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+
+
+    <div id="display"></div>
+
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
+      import {
+        getFirestore,
+        collection,
+        getDocs,
+        getDoc,
+        doc,
+      } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyBN5PBfHzneISCGAS-sFG9gbPQ9X8NIVpY",
+        authDomain: "coinhub-e63be.firebaseapp.com",
+        projectId: "coinhub-e63be",
+        storageBucket: "coinhub-e63be.firebasestorage.app",
+        messagingSenderId: "422080012670",
+        appId: "1:422080012670:web:681cb33085707a4c9b532f",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+      const colRef = collection(db, "UserOne");
+
+      loginForm.addEventListener("submit", displayProfile);
+      async function displayProfile(e) {
+        e.preventDefault();
+        try {
+          const querySnap = await getDocs(colRef);
+
+          console.log(querySnap);
+          display.innerHTML = "";
+          querySnap.forEach((docSnap) => {
+            const actualData = docSnap.data();
+            console.log(actualData);
+          });
+
+          querySnap.forEach((docSnap) => {
+            const actualData = docSnap.data();
+            // Geting user input
+            const userID = document.getElementById("userID").value;
+            const passWord = document.getElementById("passWord").value;
+
+            // Basic validation
+            if (!userID || !passWord) {
+              alert("Please enter both Matric Number and Password.");
+              return;
+            }
+
+            // Retreving stored credentials from localStorage
+            const storedMatric = actualData.email;
+            const storedPassword = actualData.password;
+
+            // Checking if stored data exists
+            if (storedMatric == "" || storedPassword == "") {
+              alert("No account found.");
+              // window.location.href = "/Classwork/signup.html";
+              return;
+            }
+
+            // Verify credentials
+            if (userID === storedMatric && passWord === storedPassword) {
+              // alert("Login successful!");
+              window.location.href = "./pages/home.html";
+            } else {
+              alert("Invalid credentials. Please try again.");
+
+              // Check if username doesn't exist in localStorage
+              if (!storedMatric) {
+                window.location.href = "/Classwork/signup.html";
+              }
+            }
+          });
+        } catch (error) {
+          console.log(error);
+        }
+      }
+    </script>
+  </body>
+</html>

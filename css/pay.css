@@ -1,0 +1,156 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    margin-top: 3%;
+}
+.container{
+    background-color: rgb(23, 107, 81);
+    padding: 50px;
+    max-width: 50%;
+    margin: auto;
+    border-radius: 10px;
+    color: white;
+    margin-bottom: 20px;
+}
+.form{
+    background-color: white;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    justify-content: center;
+    padding: 40px;
+    border-radius: 10px;
+}
+.bankName{
+    margin-top: 20px;
+}
+.accountName{
+    margin-top: 20px;
+}
+.accountNum{
+    margin-top: 20px;
+}
+.amount{
+    margin-top: 20px;
+}
+.narration{
+    margin-top: 20px;
+}
+input{
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+}
+textarea{
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+}
+select{
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+}
+button{
+    background-color: rgb(23, 107, 81);
+    padding: 10px 15px;
+    color: white;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.popup {  
+    display: none;  
+    position: fixed;  
+    top: 0;  
+    left: 0;  
+    width: 100%;  
+    height: 100%;  
+    background-color: rgba(0, 0, 0, 0.966);  
+    z-index: 1000; 
+    text-align: center; 
+}  
+
+.popup-content { 
+    display: none; 
+    background-color: #fff;  
+    margin: 15% auto;  
+    padding: 20px;  
+    width: 70%;  
+    max-width: 400px;  
+    position: relative;  
+    border-radius: 10px;  
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    font-size: 20px;  
+}
+.popup-content h2{
+    margin-bottom: 15px;
+}
+.popup-content p{
+    margin-bottom: 15px;
+}
+.popup-content1 {  
+    background-color: #fff;  
+    margin: 15% auto;  
+    padding: 20px;  
+    width: 70%;  
+    max-width: 400px;  
+    position: relative;  
+    border-radius: 10px;  
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    font-size: 20px;  
+}
+.popup-content button{
+    background-color: red;
+    color: white;
+    padding: 20px 30px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+}
+.popup-content a :hover{
+    background-color: green;
+}
+img{
+    width: 50px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+@media (max-width:740px){
+    .container{
+        background-color: rgb(23, 107, 81);
+        padding: 15px;
+        max-width: 100%;
+        margin: auto;
+        border-radius: 10px;
+        color: white;
+        margin-bottom: 20px;
+    }
+    .form{
+        background-color: white;
+        color: black;
+        font-family: 'Poppins', sans-serif;
+        justify-content: center;
+        padding: 20px;
+        border-radius: 10px;
+    }
+}

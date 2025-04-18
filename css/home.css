@@ -1,0 +1,203 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+.secOne{
+    background-color: rgb(23, 107, 81);
+    padding: 2%;
+    color: white;
+}
+.secOneHeader{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 2%;
+}
+.account{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 1%;
+}
+.accountDiv{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(1, 73, 53);
+    padding: 15px 30px;
+    /* gap: 140px; */
+    border-radius: 10px;
+    width: 100%;
+}
+.secOneTaskBar{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10%;
+    margin-right: 10%;
+    max-width: 30%;
+    margin-top: 1%; 
+}
+.secOneTask{
+    background-color: rgb(1, 73, 53);
+    width: 100px;
+    height: 70px;
+    padding-top: 15px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+.secOneTask i{
+    font-size: 20px;
+}
+.secTwo{
+    background-color: aliceblue;
+}
+
+.secTwoContainer{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-top: 20px;
+}
+.containerLeft{
+    width: 100%;
+}
+.transaction{
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    width: 96%;
+}
+.tranHead{
+    display: flex;
+    justify-content: space-between;
+    /* gap: 100px; */
+    /* margin-bottom: 20px; */
+}
+.trans{
+    border-bottom: thin solid rgba(97, 95, 95, 0.219);
+    padding-top: 20px;
+}
+.transDetails{
+    display: flex;
+    justify-content: space-between;
+}
+.trans h6{
+    font-size: 14px;
+}
+.trans p{
+    font-size: 12px;
+}
+.containerRight{
+    width: 100%;
+}
+.depositt{
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    width: 96%;
+    margin-bottom: 15px;
+}
+.depositHead{
+    display: flex;
+    justify-content: space-between;
+    /* gap: 100px; */
+    /* margin-bottom: 20px; */
+}
+.depositDetails{
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.depoP1{
+    background-color: rgb(1, 73, 53);
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+}
+.depoP2{
+    background-color: rgb(8, 134, 99);
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+}
+.depositDetails2 i{
+    font-size: 20px;
+}
+.depositDetails2{
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+@media (max-width:740px){
+    body{
+        font-family: 'Poppins', sans-serif;
+        font-size: 15px;
+    }
+    .secOneHeader{
+        display: flex;
+        justify-content: space-between;
+        margin-left: 3%;
+        margin-right: 3%;
+        margin-top: 2%;
+    }
+    .account{
+        display: block;
+        margin-left: 1%;
+        margin-right: 1%;
+        margin-top: 2%;
+    }
+    .accountDiv{
+        display: flex;
+        justify-content: space-between;
+        background-color: rgb(1, 73, 53);
+        padding: 15px 15px;
+        gap: 100px;
+        border-radius: 10px;
+        margin-top: 5px;
+    }
+    .secOneTaskBar{
+        display: flex;
+        justify-content: space-between;
+        margin-left: 1%;
+        margin-right: 1%;
+        max-width: 100%;
+        margin-top: 3%; 
+    }
+    .secOneTask{
+        background-color: rgb(1, 73, 53);
+        width: 90px;
+        height: 70px;
+        padding-top: 15px;
+        border-radius: 10px;
+        text-align: center;
+    }
+    .secOneTask i{
+        font-size: 20px;
+    }
+    .secTwoContainer{
+        display: block;
+        margin-left: 5%;
+        margin-right: 1%;
+        padding-top: 20px;
+    }
+    .transaction{
+        background-color: white;
+        padding: 15px;
+        border-radius: 10px;
+        width: 96%;
+        margin-top: 10px;
+    }
+}

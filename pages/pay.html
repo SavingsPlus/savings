@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/pay.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Transfer</h1>
+        <div class="form">
+            <div class="bankName">
+                <label for="">Bank Name</label><br>
+                <input type="text" placeholder="Enter Bank Name..." id="bankName" required>
+            </div>
+            <div class="accountName">
+                <label for="">Account Name</label><br>
+                <input type="text" placeholder="Enter Account Name..." id="accountName" required>
+            </div>
+            <div class="accountNum">
+                <label for="">Account Number</label><br>
+                <input type="text" placeholder="Enter Account Number..." id="accountNum" required>
+            </div>
+            <div class="amount">
+                <label for="">Amount</label><br>
+                <input type="number" placeholder="$$" id="amount" required>
+            </div>
+            <div class="narration">
+                <label for="">Narration</label><br>
+                <textarea name="" placeholder="Narration..." id="" required></textarea>
+            </div>
+            <div id="message3"></div>
+            <div>
+                <button onclick="openPopup()">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup" class="popup">
+        <div class="popup-content1">
+            <h2>Please Wait</h2>
+            <img src="../media/loading.BtH7NlLy.png" alt="">
+        </div>
+        <div class="popup-content">
+            <h2>Message</h2>
+            <img src="../media/download.png" alt="">
+            <p>$5,000 fee needed to complete this transaction.</p>
+            <button>Contact Account Manager to proceed</button>
+        </div>
+    </div>
+
+
+    <script>
+        function openPopup() {
+          
+          
+          const bankDetails = {
+            bankName:document.getElementById('bankName').value.trim(),
+            accountName:document.getElementById('accountName').value.trim(),
+            accountNum:document.getElementById('accountNum').value.trim(),
+          }
+          if (bankDetails.bankName === ""|| bankDetails.accountName === "" || bankDetails.accountNum ==="") {
+            message3.textContent = "Ensure all fields are filled"
+            message3.style.color = "red"
+            return
+          }
+            
+            
+          
+                    
+          document.getElementById("popup").style.display = "block";
+          const loadingPopup = document.querySelector('.popup-content1');  
+          const errorPopup = document.querySelector('.popup-content');  
+          // Hide loading popup and show error popup after 2 seconds  
+          setTimeout(function() {  
+              loadingPopup.style.display = 'none';  
+              errorPopup.style.display = 'block';  
+          }, 3000); // 2000 milliseconds = 2 seconds 
+        }
+  
+        function closePopup() {
+          document.getElementById("popup").style.display = "none";
+        }
+  
+        // Close popup when clicking outside
+        window.onclick = function (event) {
+          if (event.target == document.getElementById("popup")) {
+            closePopup();
+          }
+        };
+      </script>
+</body>
+</html>
